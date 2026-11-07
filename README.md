@@ -13,7 +13,12 @@ A dark-themed Android case-file manager with local SQLite storage.
 ## Build
 1. Install Android Studio (current stable) on a computer.
 2. Open this folder as an existing project.
-3. Allow Gradle sync and install the Android SDK Platform 35 if prompted.
+3. Allow Gradle sync and install the - name: Install Android SDK
+  run: |
+    export ANDROID_HOME=/usr/local/lib/android/sdk
+    export ANDROID_SDK_ROOT=$ANDROID_HOME
+    yes | $ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager --sdk_root=$ANDROID_HOME --licenses
+    $ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-35" "build-tools;35.0.0" "platform-tools" Platform 35 if prompted.
 4. Connect an Android phone with USB debugging enabled, or use an emulator.
 5. Select **Build > Build Bundle(s) / APK(s) > Build APK(s)**.
 
